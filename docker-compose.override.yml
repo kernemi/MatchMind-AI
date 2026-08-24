@@ -1,0 +1,19 @@
+# Development overrides
+# This file is automatically loaded by docker-compose
+
+version: '3.9'
+
+services:
+  backend:
+    environment:
+      - DEBUG=True
+    # Enable hot reload
+    stdin_open: true
+    tty: true
+
+  frontend:
+    # Enable hot reload for Vite
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
+    tty: true

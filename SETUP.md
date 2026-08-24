@@ -47,6 +47,16 @@ Edit the `.env` files with your configuration. See **Environment Variables** sec
 
 #### Using Docker (Recommended)
 
+**Option 1: Automated Setup (Easiest)**
+```bash
+# Run the setup script
+bash scripts/setup.sh
+
+# Or use Make
+make setup
+```
+
+**Option 2: Manual Setup**
 ```bash
 # Build and start all services
 docker-compose up --build
@@ -60,6 +70,16 @@ First startup will take 5-10 minutes as it:
 - Installs Python/Node dependencies
 - Downloads AI models (~420MB)
 - Runs database migrations
+
+**Quick Commands with Make:**
+```bash
+make help           # Show all available commands
+make up             # Start services
+make down           # Stop services
+make logs           # View logs
+make migrate        # Run migrations
+make createsuperuser # Create admin user
+```
 
 #### Without Docker (Manual Setup)
 
