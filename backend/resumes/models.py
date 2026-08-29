@@ -42,4 +42,7 @@ class Resume(models.Model):
     @property
     def analysis_count(self):
         """Return number of analyses using this resume"""
-        return self.analyses.count()
+        try:
+            return self.analyses.count()
+        except AttributeError:
+            return 0

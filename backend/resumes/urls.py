@@ -1,10 +1,12 @@
-"""
-URL patterns for Resumes app (placeholder for Task 6)
-"""
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import ResumeViewSet
 
 app_name = 'resumes'
 
+router = DefaultRouter()
+router.register(r'', ResumeViewSet, basename='resume')
+
 urlpatterns = [
-    # Resume endpoints will be added in Task 6
+    path('', include(router.urls)),
 ]
