@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Layout from './components/Layout'
+import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
 import Login from './features/auth/Login';
 import Register from './features/auth/Register';
 import Profile from './features/auth/Profile';
+import ResumesPage from './features/resumes/ResumesPage';
 import { useAuth } from './features/auth/AuthContext';
 
 function Dashboard() {
@@ -29,6 +30,7 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/resumes" element={<ResumesPage />} />
           </Route>
         </Route>
       </Routes>
