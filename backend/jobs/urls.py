@@ -1,10 +1,15 @@
 """
-URL patterns for Jobs app (placeholder for Task 8)
+URL patterns for Jobs app
 """
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import JobViewSet
 
 app_name = 'jobs'
 
+router = DefaultRouter()
+router.register(r'', JobViewSet, basename='job')
+
 urlpatterns = [
-    # Job endpoints will be added in Task 8
+    path('', include(router.urls)),
 ]
